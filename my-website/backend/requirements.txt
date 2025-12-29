@@ -1,0 +1,29 @@
+# Backend Requirements for Physical AI Platform
+
+# RAG Service Dependencies
+fastapi
+uvicorn
+qdrant-client
+openai
+python-dotenv
+
+# VLA Service Dependencies
+torch>=1.12.0
+transformers>=4.20.0
+openai-whisper
+sounddevice
+numpy>=1.21.0
+scipy
+pyyaml
+requests
+
+# ROS 2 dependencies (for development)
+rclpy
+cv-bridge
+
+# For Isaac Sim (if using the bridge)
+omni-isaac-gym-envs
+omni-isaac-orbit
+
+# Additional utilities
+flask
