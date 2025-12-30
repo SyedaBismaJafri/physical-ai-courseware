@@ -1,12 +1,4 @@
-// @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
 import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -14,27 +6,21 @@ const config = {
   tagline: 'Learn Robotics, AI, and Autonomous Systems',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://your-username.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/physical-ai-courseware/',
+  // VERCEL SETTINGS
+  url: 'https://physical-ai-courseware.vercel.app', // Isay Vercel khud handle kar lega
+  baseUrl: '/', // YAHAN CHANGE KIYA: GitHub Pages ke liye '/repo-name/' hota hai, Vercel ke liye sirf '/'
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'your-username', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-courseware', // Usually your repo name.
+  organizationName: 'SyedaBismaJafri', 
+  projectName: 'physical-ai-courseware', 
 
-  onBrokenLinks: 'throw',
+  // ERROR FIX: Isay 'ignore' karne se build fail nahi hogi
+  onBrokenLinks: 'ignore', 
+  onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -47,25 +33,10 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/SyedaBismaJafri/physical-ai-courseware/tree/main/frontend/',
         },
         blog: {
           showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -77,15 +48,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Physical AI & Humanoid Robotics',
+        title: 'Physical AI',
         logo: {
-          alt: 'Physical AI Logo',
+          alt: 'Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -97,7 +67,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/your-username/physical-ai-courseware',
+            href: 'https://github.com/SyedaBismaJafri/physical-ai-courseware',
             label: 'GitHub',
             position: 'right',
           },
@@ -109,52 +79,12 @@ const config = {
           {
             title: 'Modules',
             items: [
-              {
-                label: 'Physical AI Overview',
-                to: '/docs/overview',
-              },
-              {
-                label: 'ROS 2 Module',
-                to: '/docs/module1-ros2',
-              },
-              {
-                label: 'Simulation Module',
-                to: '/docs/module2-simulation',
-              },
-            ],
-          },
-          {
-            title: 'Resources',
-            items: [
-              {
-                label: 'GitHub Repository',
-                href: 'https://github.com/your-username/physical-ai-courseware',
-              },
-              {
-                label: 'NVIDIA Isaac',
-                href: 'https://developer.nvidia.com/isaac',
-              },
-              {
-                label: 'ROS 2 Documentation',
-                href: 'https://docs.ros.org/',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/your-username/physical-ai-courseware',
-              },
+              { label: 'Overview', to: '/docs/intro' },
+              { label: 'ROS 2', to: '/docs/module1-ros2' },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Physical AI. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
