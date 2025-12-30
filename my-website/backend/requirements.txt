@@ -6,6 +6,7 @@ uvicorn
 qdrant-client
 openai
 python-dotenv
+pydantic-ai
 
 # VLA Service Dependencies
 torch>=1.12.0
